@@ -1,0 +1,117 @@
+body {
+margin: 0 auto;
+}
+
+.grid {
+    display:grid;
+    grid-template-rows: 10% 90%;
+    height: 970px;
+   
+}
+.banner-container {
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    background-image: url('bc2.jpg');
+    border-bottom: solid white 1px;
+}
+#algo-banner {
+    border-right: solid white 1px;
+    display:grid;
+    grid-template-columns: 100%;
+}
+#gen-divs {
+    border-radius: 20px;
+    background-color: rgb(65, 162, 201);
+    color: white;
+    width: 150px;
+    outline: none;
+}
+.algo-btn {
+    width: 110px;
+    border:white;
+    padding:10px;
+    outline: none;
+    background-color: rgb(65, 162, 201);
+    color: white;
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor:pointer;
+    
+}
+.algo-btn:hover {
+    transition: 0.3s;
+    background-color: teal;
+    font-size: x-large;
+   
+}
+#algo-box {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    background-color: rgb(65, 162, 201);
+}
+h1 {
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+ 
+}
+
+.algo-container {
+    display: grid;
+    grid-template-columns: 17% 80%;
+  
+}
+/*The nav*/
+.nav-box {
+    background-image: url('./bc2.jpg');
+    background-size: cover;
+    display: grid;
+    grid-template-rows: 28% 28% 28% 16% ;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+}
+.nav-div input {
+    width: 200px;
+    
+}
+
+.nav-box .nav-div div h1 {
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+    text-align: center;
+}
+.nav-launch{
+    display: grid;
+    grid-template-rows: 50% 50%;
+}
+
+.play {
+    box-sizing: border-box;
+    width: 74px;
+    height: 74px;
+    border-style: solid;
+    border-width: 37px 0px 37px  74px;
+    border-color: transparent transparent transparent #202020;
+    cursor: pointer;
+    align-self: flex-end;
+}
+.play:hover {
+    transition: 0.3s;
+    background-color: teal;
+
+}
+/*The Divs*/
+#divs-box {
+    display:inline-block;
+    padding-top: 40px;
+    position: relative;
+   text-align: center;
+
+}
+.bar {
+    background-color: teal;
+    display: inline-block; 
+    text-align: center;
+}

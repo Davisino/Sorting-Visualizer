@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./resources/style2.css">
+    <title>Document</title>
+    <script src="./Main.js">
+
+    </script>
+</head>
+<body onload='main.generateDivs()'>
+    <div class="grid">
+    <div class="banner-container">
+        <div id="algo-banner">
+            <h1>Sorting Visualizer</h1>
+            
+        </div>
+        <div id="algo-box">
+            <button id="bubble" class="algo-btn" onclick="getTracker('bubble')">Bubble Sort</button>
+            <button id="merge" class="algo-btn" onclick="getTracker('merge')">Merge Sort</button>
+            <button id="quick" class="algo-btn" onclick="getTracker('quick')">Quick Sort</button>
+            <button id="heap" class="algo-btn" onclick="getTracker('heap')">Heap Sort</button>
+        </div>
+    </div>
+    <div class='algo-container'> 
+        <div class="nav-box">
+                <div class="nav-div">
+                    <div>
+                        <h1>Change No Of Divs and Sorting Speed</h1>
+                        <input onchange="main.generateDivs()" oninput="main.generateDivs()" style="width: 230px;" type="range" min='10' step="1" max="330" id="changeDivs" value="200"> 
+                        <p id="range"></p>
+                    </div>
+                </div>
+                <!-- <div class="nav-div">
+                    <div>
+                        <h1>Change Speed</h1> -->
+                      <!--Add button-->
+                    <!-- </div>
+                </div> -->
+                <!-- <div class="nav-div">
+                   <div>
+                    <h1>Change color</h1> -->
+                    <!--Add button-->
+                   <!-- </div> -->
+                <!-- </div> -->
+                <div class="nav-launch">
+                    <div>
+                        <button onclick="main.generateDivs()" id="gen-divs" type="button">Generate new array</button>
+                    </div>
+                    <div>
+                        <button class="play" onclick="runAlgoSelected()"></button>
+                    </div>
+                
+                    
+                </div>
+        </div>
+        <!--Main Work-->
+
+        <div  id="divs-box">
+              
+        </div>
+
+    </div>
+    
+</div>
+<p id="david"></p>
+</body>
+</html>
