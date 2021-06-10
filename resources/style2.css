@@ -27,6 +27,14 @@ margin: 0 auto;
     color: white;
     width: 150px;
     outline: none;
+    display: flex;
+    font-size: 2rem;
+    width: max-content;
+    height: max-content;
+}
+#gen-divs:hover {
+    background-color:teal;
+    transition: 400ms;
 }
 .algo-btn {
     width: 110px;
@@ -67,7 +75,7 @@ h1 {
     background-image: url('./bc2.jpg');
     background-size: cover;
     display: grid;
-    grid-template-rows: 28% 28% 28% 16% ;
+    grid-template-rows: 10% 90%;
     border-right: 1px solid white;
     border-bottom: 1px solid white;
 }
