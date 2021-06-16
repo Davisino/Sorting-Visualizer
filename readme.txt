@@ -1,0 +1,2 @@
+Hey there! I implemented this sorting vizualization tool that show how some of the most well known sorting algorithm work.
+Enjoy having fun and playing around with it. You can access it here: https://davisino.github.io/Sorting-Visualizer/
