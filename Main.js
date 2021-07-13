@@ -28,7 +28,7 @@ const algoDescriptions = {
     `
 }
 // This function calculate the right velocity it should have;
-function getVelocity(multiplier = 3) {
+function getVelocity(multiplier = 3.2) {
     let divs = Number(document.getElementById('changeDivs').value)
     if (divs >= 260) {
         return 1 * multiplier
