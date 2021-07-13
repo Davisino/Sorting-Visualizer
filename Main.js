@@ -1,5 +1,7 @@
 
 // implement unclickable buttons when sorting is operating;
+// FIX THE NUMBER SWAPING;
+
 const scrSize = window.screen.height -300;
 const algoTracker = [
    ['bubble', false],
@@ -7,8 +9,26 @@ const algoTracker = [
    ['heap', false],
    ['quick',false]
 ]
+const algoDescriptions = {
+    merge: `
+    <h2>Merge Sort Time Complexity</h2><br>
+        Best: Ω(n log(n))<br><br> Average: θ(n log(n))<br><br> Worst: O(n log(n))
+    `,
+    bubble: `
+        <h2>Bubble Sort Time Complexity</h2>
+        Best: Ω(n)<br><br> Average: θ(n^2)<br><br> Worst: O(n^2)
+    `,
+    quick: `
+    <h2>Quick Sort Time Complexity</h2>
+    Best: Ω(n log(n))<br><br> Average:θ(n log(n))<br><br> Worst: O(n^2)
+    `,
+    heap: `
+    <h2>Heap Sort Time Complexity</h2>
+    Best: Ω(n)<br><br> Average: θ(n^2)<br><br> Worst: O(n^2)
+    `
+}
 // This function calculate the right velocity it should have;
-function getVelocity(multiplier = 2) {
+function getVelocity(multiplier = 3) {
     let divs = Number(document.getElementById('changeDivs').value)
     if (divs >= 260) {
         return 1 * multiplier
@@ -129,6 +149,7 @@ function calculateMargin(divs) {
 }
 // BUTTON STUFF 
 function getTracker(str) {
+    resetDescription(str);
     cleanTracker();
     for (let i = 0; i < algoTracker.length; i++) {
         if (algoTracker[i][0] === str) {
@@ -138,14 +159,21 @@ function getTracker(str) {
     let gbutton = document.getElementById(str);
     gbutton.style.fontSize = 'x-large';
     gbutton.style.backgroundColor = 'teal ';
+   
 }
+function resetDescription(algorithm) {
+    const getDescritionBox = document.getElementById('description');
+    getDescritionBox.innerHTML = algoDescriptions[algorithm];
+}
+
+
 function cleanTracker() {
     for (let i = 0; i < algoTracker.length; i++) {
         if (algoTracker[i][1] === true) {
             algoTracker[i][1] = false;
             let algo = algoTracker[i][0];
             let grabButton = document.getElementById(algo);
-            grabButton.style.fontSize = 'large';
+            grabButton.style.fontSize = '1.3rem';
             grabButton.style.backgroundColor = 'rgb(65, 162, 201)';
         }
     }
@@ -302,12 +330,14 @@ class SortingVisualizer {
                 },i * getVelocity());
             } 
         }
-    
+        
+        // FIND OUT WHY MAIN ARRAY CHANGES WHEN THIS FUNCTION IS CALLED:
+       
     }
 
     merge() {
       const animations = mergeSort(this.array);
-
+        
       for (let i = 0; i < animations.length; i++) {
           const bars = document.getElementsByClassName('bar');
           const isColorChange = i % 3 !== 2;
@@ -714,7 +744,7 @@ function swap(array, idx, idx2) {
 	array[idx2] = temp;
 }
 
-// MergeSort Code + swap;
+// MergeSort Code + swap; 
 function mergeSort(array) {
     const animations  = [];
     if (array.length <= 1) return array;
@@ -774,9 +804,10 @@ function doMerge(
 function doBubble(array) {
 	let sorted = true;
     let animations = [];
+    let len = array.length-1;
 	while (sorted) {
 		sorted = false;
-		for (let i = 0 ; i < array.length - 1; i++) {
+		for (let i = 0 ; i < len; i++) {
           
 			if (array[i] > array[i+1]) {
                 //length 4 need color and swap
@@ -792,9 +823,13 @@ function doBubble(array) {
             }
 
 		}
-        animations.push([array.length-1])
-        array.pop();
+        animations.push([len])
+        len = len-1;
 	}
+    // Last for loop to color all the ones that have been left;
+    for (let i = 0; i < array.length-1; i++) {
+        animations.push([i]);
+    }
 	return animations
 }
 

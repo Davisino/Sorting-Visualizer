@@ -17,42 +17,35 @@
             
         </div>
         <div id="algo-box">
-            <button id="bubble" class="algo-btn" onclick="getTracker('bubble')">Bubble Sort</button>
-            <button id="merge" class="algo-btn" onclick="getTracker('merge')">Merge Sort</button>
-            <button id="quick" class="algo-btn" onclick="getTracker('quick')">Quick Sort</button>
-            <button id="heap" class="algo-btn" onclick="getTracker('heap')">Heap Sort</button>
+            <button id="bubble" class="play" onclick="getTracker('bubble')">Bubble Sort</button>
+            <button id="merge" class="play" onclick="getTracker('merge')">Merge Sort</button>
+            <button id="quick" class="play" onclick="getTracker('quick')">Quick Sort</button>
+            <button id="heap" class="play" onclick="getTracker('heap')">Heap Sort</button>
         </div>
     </div>
     <div class='algo-container'> 
         <div class="nav-box">
-                <div class="nav-div">
+                <div class="nav-div" >
                     <div>
-                        <h1>Change No Of Divs and Sorting Speed</h1>
-                        <input onchange="main.generateDivs()" oninput="main.generateDivs()" style="width: 230px;" type="range" min='10' step="1" max="330" id="changeDivs" value="200"> 
+                        <h1>Bars & Speed</h1>
+                        <input   oninput="main.generateDivs()" style="width: 230px;" type="range" min='10' step="1" max="330" id="changeDivs" value="200"> 
                         <p id="range"></p>
                     </div>
                 </div>
-                <!-- <div class="nav-div">
-                    <div>
-                        <h1>Change Speed</h1> -->
-                      <!--Add button-->
-                    <!-- </div>
-                </div> -->
-                <!-- <div class="nav-div">
-                   <div>
-                    <h1>Change color</h1> -->
-                    <!--Add button-->
-                   <!-- </div> -->
-                <!-- </div> -->
-                <div class="nav-launch">
+                
+                <div class="nav-launch" >
                     <div style="margin: auto 0;">
-                        <button onclick="main.generateDivs()" id="gen-divs" type="button">Generate new array</button>
+                        <button onclick="main.generateDivs()" class="play" id="gen-divs" type="button">Generate new array</button>
                     </div>
                     <div>
-                        <button class="play" onclick="runAlgoSelected()"></button>
+                        <button class="play" onclick="runAlgoSelected()">Run</button>
                     </div>
                 
                     
+                </div>
+                <!-- Description of the algorithm should go here -->
+                <div class="description" id="description">
+                   
                 </div>
         </div>
         <!--Main Work-->

@@ -17,20 +17,21 @@ margin: 0 auto;
     border-bottom: solid white 1px;
 }
 #algo-banner {
+    padding-left: 2rem;
     border-right: solid white 1px;
     display:grid;
     grid-template-columns: 100%;
 }
 #gen-divs {
-    border-radius: 20px;
     background-color: rgb(65, 162, 201);
     color: white;
     width: 150px;
     outline: none;
     display: flex;
-    font-size: 2rem;
+    font-size: 1.3rem;
     width: max-content;
     height: max-content;
+   
 }
 #gen-divs:hover {
     background-color:teal;
@@ -55,7 +56,9 @@ margin: 0 auto;
    
 }
 #algo-box {
+    background-image: url('bc2.jpg');
     display: grid;
+    align-content: center;
     grid-template-columns: 25% 25% 25% 25%;
     background-color: rgb(65, 162, 201);
 }
@@ -75,13 +78,18 @@ h1 {
     background-image: url('./bc2.jpg');
     background-size: cover;
     display: grid;
-    grid-template-rows: 10% 90%;
+    grid-template-rows: 1fr 1fr 4fr;
+
     border-right: 1px solid white;
     border-bottom: 1px solid white;
+    padding: 1.5rem;
 }
 .nav-div input {
     width: 200px;
-    
+}
+.nav-div {
+    display: flex;
+    align-items: center;
 }
 
 .nav-box .nav-div div h1 {
@@ -93,23 +101,33 @@ h1 {
 .nav-launch{
     display: grid;
     grid-template-rows: 50% 50%;
+    align-items: center;
+    justify-items: center;
+    border-top: solid white 1px;
 }
 
 .play {
-    box-sizing: border-box;
-    width: 74px;
-    height: 74px;
-    border-style: solid;
-    border-width: 37px 0px 37px  74px;
-    border-color: transparent transparent transparent #202020;
-    cursor: pointer;
-    align-self: flex-end;
+    
+    border-radius: 20px 0 20px 0;
+    background-color: rgb(65, 162, 201);
+    padding: 8px;
+    color: white;
+    width: 150px;
+    outline: none;
+    display: flex;
+    font-size: 1.3rem;
+    width: max-content;
+    height: max-content;
+    border: solid 1px rgb(20, 71, 105);
+
 }
 .play:hover {
+    cursor: pointer;
     transition: 0.3s;
     background-color: teal;
 
 }
+
 /*The Divs*/
 #divs-box {
     display:inline-block;
@@ -122,4 +140,11 @@ h1 {
     background-color: teal;
     display: inline-block; 
     text-align: center;
+    transition: 200ms;
+}
+/* description of Algo */
+
+#description {
+    font-size: 1.5rem;
+    color: white;
 }
