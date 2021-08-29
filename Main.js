@@ -69,6 +69,7 @@ function getVelocity(multiplier = 3.2) {
 // FIST MAKE THE RANGE WORK ACCORDING TO THE INPUT > DEVELOP THE ALGORITHMN
 function getDivs() {
     let len = Number(document.getElementById('changeDivs').value);
+    console.log(len)
      let width = calculateWidth(len);
      let margin = calculateMargin(len);
     return [len, width, margin];
@@ -478,28 +479,7 @@ class SortingVisualizer {
                 div.style.width = divs[1];
                 div.style.margin = divs[2];
                 div.style.backgroundColor = 'teal';
-                if (divs[0] < 45) {
-                    let paragraph = document.createElement('p');
-                    
-                    paragraph.style.color = 'white';
-                    paragraph.style.fontWeight = 1000;
-                    // divout will be inline block so bars could be next to each other.
-                    // div will be pushed to divout and flex could be used to position the number to the bottom;
-                    let divout = document.createElement('div');
-                    divout.style.display = 'inline-block';
-                    paragraph.innerHTML = `${number}`;
-                    paragraph.style.margin = '0 auto';
-                    div.appendChild(paragraph);
-                    div.style.display = 'flex';
-                    div.style.alignItems = 'flex-end';
-                    div.style.position = 'relative';
-                    div.style.bottom = '0';
-                    divout.style.textAlign = 'center';
-                  
-                    divout.appendChild(div);
-                    divBox.appendChild(divout);
-                    continue
-                }
+          
                 divBox.appendChild(div);
                 
             }
@@ -520,27 +500,7 @@ class SortingVisualizer {
                 div.style.width = divs[1];
                 div.style.margin = divs[2];
                 div.style.backgroundColor = 'teal';
-                if (divs[0] < 45) {
-                    let paragraph = document.createElement('p');
-                    paragraph.style.color = 'white';
-                    paragraph.style.fontWeight = 1000;
-                    // divout will be inline block so bars could be next to each other.
-                    // div will be pushed to divout and flex could be used to position the number to the bottom;
-                    let divout = document.createElement('div');
-                    divout.style.display = 'inline-block';
-                    paragraph.innerHTML = `${number}`;
-                    paragraph.style.margin = '0 auto';
-                    div.appendChild(paragraph);
-                    div.style.display = 'flex';
-                    div.style.alignItems = 'flex-end';
-                    div.style.position = 'relative';
-                    div.style.bottom = '0';
-                    divout.style.textAlign = 'center';
-                  
-                    divout.appendChild(div);
-                    divBox.appendChild(divout);
-                    continue
-                }
+              
                 divBox.appendChild(div);
                 
             }
